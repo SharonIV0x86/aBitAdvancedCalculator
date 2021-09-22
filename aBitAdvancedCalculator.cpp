@@ -37,7 +37,7 @@ int main()
     else if (perform_all_funcs == 'N')
 
     {
-
+        string error_code = "Please enter a valid operator! here is the error code:";
         std::cout << "Enter the first number: ";
         std::cin >> input_num2;
         std::cout << "Enter the operator. like what mathematical function you want to perform: ";
@@ -45,10 +45,14 @@ int main()
         std::cout << "Enter the second number: ";
         std::cin >> input_num2;
 
-        int answer;
+       int answer;
         if (op == '+')
         {
             answer = input_num1 + input_num2;
+        }
+        if (op != '+' && op != '-' && op != '*' && op != '/')
+        {
+            std::cout << error_code;
         }
         else if (op = '-')
         {
@@ -62,13 +66,12 @@ int main()
         {
             answer = input_num1 / input_num2;
         }
+
         else
         {
             std::cout << "Invalid use of mathematical function:";
         }
-        {
-            std::cout << "The answer is: " << answer;
-        }
+        std::cout << answer;
+        return 0;
     }
-    return 0;
 }
