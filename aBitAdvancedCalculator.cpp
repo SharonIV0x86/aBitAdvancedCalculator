@@ -1,15 +1,14 @@
 #include <iostream>
-#include <string>
-using namespace std;
+//using namespace std;
 
 int main()
 {
     double input_num1, input_num2;
     char op, perform_all_funcs;
-    double all_input_num1, all_input_num2;
+    float all_input_num1, all_input_num2;
 
     {
-        std::cout<<"            <<<<<<<<<<<<<<<<<< SIMPLE BUT A BIT ADVANCED CALCULATOR MADE BY *SharonIV*>>>>>>>>>>>>>>>>>>          "<< std::endl;
+        std::cout << "            <<<<<<<<<<<<<<<<<< SIMPLE BUT A BIT ADVANCED CALCULATOR MADE BY *SharonIV*>>>>>>>>>>>>>>>>>>          " << std::endl;
     }
 
     std::cout << "Press Y to perform all mathematical functions of the chosen numbers, or press N to"
@@ -35,44 +34,42 @@ int main()
         }
     }
 
-    else if (perform_all_funcs == 'N')
+    if (perform_all_funcs == 'N')
 
     {
-        string error_code = "Please enter a valid operator! here is the error code:";
+
         std::cout << "Enter the first number: ";
-        std::cin >> input_num2;
+        std::cin >> input_num1;
         std::cout << "Enter the operator. like what mathematical function you want to perform: ";
         std::cin >> op;
         std::cout << "Enter the second number: ";
         std::cin >> input_num2;
 
-       int answer;
+        int answer;
         if (op == '+')
         {
-            answer = input_num1 + input_num2;
+            double answer = input_num1 + input_num2;
+            std::cout << "The addition of the numbers will be: " << answer;
         }
-        if (op != '+' && op != '-' && op != '*' && op != '/')
+        else if (op == '-')
         {
-            std::cout << error_code;
-        }
-        else if (op = '-')
-        {
-            answer = input_num1 - input_num2;
+            double answer2 = input_num1 - input_num2;
+            std::cout << "The Subtraction of the numbers will be: " << input_num1 - input_num2;
         }
         else if (op == '*')
         {
-            answer = input_num1 * input_num2;
+            long answer3 = input_num1 * input_num2;
+            std::cout << "The Multiplication of the numbers will be: " << input_num1 * input_num2;
         }
         else if (op == '/')
         {
-            answer = input_num1 / input_num2;
+            float answer4 = input_num1 / input_num2;
+            std::cout << "The division of the numbers will be: " << input_num1 / input_num2;
         }
-
         else
         {
             std::cout << "Invalid use of mathematical function:";
         }
-        std::cout << answer;
-        return 0;
     }
+    return 0;
 }
